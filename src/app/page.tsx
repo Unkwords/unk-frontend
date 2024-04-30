@@ -1,10 +1,10 @@
-import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
 import React from "react";
 
 function Home() {
   return (
     <div>
-      <Navigation></Navigation>
+      <Hero></Hero>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+import { Inter } from "next/font/google";
 import React from "react";
 import {
   Navbar,
@@ -8,15 +9,20 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Link,
   Button,
 } from "@nextui-org/react";
+import Link from "next/link";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      maxWidth="2xl"
+      isBlurred
+      isBordered
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -30,11 +36,10 @@ function Navigation() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-7" justify="center">
         <NavbarItem>
           <Link
-            underline="hover"
-            className="text-lg"
+            className="text-lg hover:text-blue-700"
             color="foreground"
             href="/"
           >
@@ -43,18 +48,25 @@ function Navigation() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            underline="hover"
-            className="text-lg"
+            className="text-lg  hover:text-blue-700"
             color="foreground"
-            href="#"
+            href="/diccionario"
           >
             Diccionario
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
-            underline="hover"
-            className="text-lg"
+            className="text-lg  hover:text-blue-700"
+            color="foreground"
+            href="#"
+          >
+            Comunidad
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className="text-lg  hover:text-blue-700"
             color="foreground"
             href="#"
           >
@@ -74,17 +86,17 @@ function Navigation() {
       </NavbarContent>
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link className="w-full " href="#" size="lg">
+          <Link className="w-full " href="#">
             Inicio
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link className="w-full " href="#" size="lg">
+          <Link className="w-full " href="#">
             Diccionario
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link className="w-full " href="#" size="lg">
+          <Link className="w-full " href="#">
             Acerca de
           </Link>
         </NavbarMenuItem>
